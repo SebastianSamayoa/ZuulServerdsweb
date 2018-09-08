@@ -1,0 +1,22 @@
+## YAML Template.
+server:
+  port: 9001
+
+spring:
+  application:
+     name: ZuulServer
+
+zuul:
+  routes:
+    demo1:
+      path: /microservicio2/**
+      #url: http://localhost:9696/umg
+      serviceId: microservicio2
+    get:
+      path: /desdenodejs/**
+      serviceId: pruebanode
+eureka:
+  client:
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:5001/eureka
