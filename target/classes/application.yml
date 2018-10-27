@@ -6,6 +6,11 @@ spring:
   application:
      name: ZuulServer
 
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
+
+
 zuul:
   routes:
     demo1:
@@ -15,6 +20,8 @@ zuul:
     get:
       path: /desdenodejs/**
       serviceId: pruebanode
+  host:
+    socket-timeout-millis: 10000
 eureka:
   client:
     registerWithEureka: true
